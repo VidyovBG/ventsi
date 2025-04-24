@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/CSS/math-style.css">
+    <script src="/JavaScript/main.js" defer></script>
+    <script src="/JavaScript/header.js"></script>
+    <meta name="description" content="Length Converter">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ученически помощник - МАТЕМАТИКА</title>
+    <link rel="shortcut icon" href="/Images/Ученически-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/c4c01a9962.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/CSS/header-footer.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+</head>
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/index.html"><img src="/Images/Ученически-removebg-preview.png" alt=""
+                    style="height: 50px; scale:1.35; margin-left: 27.5px; display: flex; align-items: center; cursor: pointer;"></a>
+        </div>
+        <ul class="links">
+            <li><a href="/index.html">Начало</a></li>
+            <li><a href="/math.html" id="active">Математика</a></li>
+            <li><a href="/physics.html">Физика</a></li>
+            <li><a href="/chemistry.html">Химия</a></li>
+            <li><a href="/eurocountries/eurocountries.html">География</a></li>
+        </ul>
+
+        <a class="action_btn" onclick="invertColors()">Смени темата</a>
+
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+
+    <div class="dropdown_menu">
+        <li><a href="/index.html">Начало</a></li>
+        <li><a href="/math.html" id="active">Математика</a></li>
+        <li><a href="/physics.html">Физика</a></li>
+        <li><a href="/chemistry.html">Химия</a></li>
+        <li><a href="/eurocountries/eurocountries.html">География</a></li>
+
+        <a class="action_btn" onclick="invertColors()">Смени темата</a>
+    </div>
+</header>
+
+
+<body>
+    <script type="text/javascript">
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropdownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropdownMenu.classList.toggle('open')
+            const isOpen = dropdownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+
+
+
+
+
+    <div class="big-wrapper-div">
+
+        <div class="wrapper">
+            <h2>Квадратни уравнения</h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="number" placeholder="a" id="kvUravnenie1">
+                </div>
+                <span></span>
+                <div class="input">
+                    <input type="number" placeholder="b" id="kvUravnenie2">
+                </div>
+                <span></span>
+                <div class="input">
+                    <input type="number" placeholder="c" id="kvUravnenie3">
+                </div>
+            </div>
+            <div class="result">
+                <input type="text" class="result1" placeholder="D-дискрим." id="kvUravnenie6" readonly>
+                <input type="text" class="result1" placeholder="Корен X1" id="kvUravnenie4" readonly>
+                <input type="text" class="result1" placeholder="Корен X2" id="kvUravnenie5" readonly>
+            </div>
+            <button onclick="calculateKvUravnenie()" id="izchisli-koren">Изчисли резултат</button>
+            <button onclick="calculateKvUravnenieNulirane()" id="izchisli-koren">Нулирай</button>
+
+            <span class="show-result-btn" id="view-solution-text" style="display: none;" onclick="viewSolution()">Виж
+                решението</span>
+        </div>
+
+
+        <div class="wrapper">
+            <h2>Степен,<br>степенуване</h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="number" placeholder="Число" id="stepenuvane1">
+                </div>
+                <span></span>
+                <div class="input">
+                    <input type="number" placeholder="Степен" id="stepenuvane2">
+                </div>
+                <span></span>
+                <div class="result">
+                    <input type="text" placeholder="Резултат" id="stepenuvane3" readonly>
+                </div>
+            </div>
+            <button onclick="calculateStepen()" id="izchisli-koren">Изчисли степен</button>
+            <button onclick="calculateStepenNulirane()" id="izchisli-koren">Нулирай</button>
+
+            <span class="show-result-btn" id="view-solution-text-stepenuvane" style="display: none;"
+                onclick="viewSolutionStepenuvane()">Виж решението</span>
+        </div>
+
+        <div class="wrapper">
+            <h2>Намиране квадратен корен</h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="number" placeholder="Число под радикала" id="radikal1">
+                </div>
+                <span></span>
+                <div class="result">
+                    <input type="text" placeholder="Резултат" id="radikal2" readonly>
+                </div>
+            </div>
+            <button onclick="calculateRoot()" id="izchisli-koren">Изчисли корен</button>
+            <button onclick="calculateRadikalNulirane()" id="izchisli-koren">Нулирай</button>
+        </div>
+
+        <div class="wrapper">
+            <h2>Пермутация<br>(Рn = n!)</h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="number" placeholder="Число по фактуриел" id="fakturiel1">
+                </div>
+                <span></span>
+                <div class="result">
+                    <input type="text" placeholder="Резултат" id="fakturiel2" readonly>
+                </div>
+            </div>
+            <button onclick="calculatePermutation()" id="izchisli-koren">Изчисли пермутация</button>
+            <button onclick="calculatePermutaciqNulirane()" id="izchisli-koren">Нулирай</button>
+
+
+            <span class="show-result-btn" id="view-solution-text-permutaciq" style="display: none;"
+                onclick="viewSolutionPermutaciq()">Виж решението</span>
+        </div>
+
+        <div class="wrapper">
+            <h2>Комбинация<br><img
+                    src="https://wikimedia.org/api/rest_v1/media/math/render/svg/33163383c0b4c047b56713a10d79040cec6dac8c"
+                    style="filter: invert(100%); scale: 2;"></h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="number" placeholder="n" id="kombinaciq1">
+                </div>
+                <span></span>
+                <div class="input">
+                    <input type="number" placeholder="k" id="kombinaciq2">
+                </div>
+                <span></span>
+                <div class="result">
+                    <input type="text" placeholder="Резултат" id="kombinaciq3" readonly>
+                </div>
+            </div>
+            <button onclick="calculateKombinaciq()" id="izchisli-koren">Изчисли комбинация</button>
+            <button onclick="calculateKombinaciqNulirane()" id="izchisli-koren">Нулирай</button>
+
+            <span class="show-result-btn" id="view-solution-text-kombinaciq" style="display: none;"
+                onclick="viewSolutionKombinaciq()">Виж решението</span>
+        </div>
+
+        <div class="wrapper">
+            <h2>Вариация<br><img src="/Images/Math/permutaciq.png" style="filter: invert(100%);"></h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="number" placeholder="n" id="variaciq1">
+                </div>
+                <span></span>
+                <div class="input">
+                    <input type="number" placeholder="k" id="variaciq2">
+                </div>
+                <span></span>
+                <div class="result">
+                    <input type="text" placeholder="Резултат" id="variaciq3" readonly>
+                </div>
+            </div>
+            <button onclick="calculateVariaciq()" id="izchisli-koren">Изчисли вариация</button>
+            <button onclick="calculateVariaciqNulirane()" id="izchisli-koren">Нулирай</button>
+
+            <span class="show-result-btn" id="view-solution-text-variaciq" style="display: none;"
+                onclick="showSolutionVariacia()">Виж
+                решението</span>
+        </div>
+
+
+        <div class="wrapper">
+            <h2>Преобразуване на дължина</h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="number" placeholder="Въведи сума" id="input">
+                    <select id="inputType">
+                        <option value="meter">Метър</option>
+                        <option value="kilometer">Километър</option>
+                        <option value="centimeter">Сантиметър</option>
+                        <option value="decimeter">Дециметър</option>
+                        <option value="milimeter">Милиметър</option>
+                        <option value="yard">Ярд</option>
+                        <option value="mile">Мили</option>
+                        <option value="inch">Инч</option>
+                    </select>
+                </div>
+                <span></span>
+                <div class="result">
+                    <input type="text" placeholder="Резултат" id="result" readonly>
+                    <select id="resultType">
+                        <option value="meter">Метър</option>
+                        <option value="kilometer">Километър</option>
+                        <option value="centimeter">Сантиметър</option>
+                        <option value="decimeter">Дециметър</option>
+                        <option value="milimeter">Милиметър</option>
+                        <option value="yard">Ярд</option>
+                        <option value="mile">Мили</option>
+                        <option value="inch">Инч</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <h2 style="font-size: 26.6px;">Преобразуване на квадратни мерни единици</h2>
+            <div class="converter">
+                <div class="input2">
+                    <input type="number" placeholder="Въведи сума" id="input2">
+                    <select id="inputType2">
+                        <option value="meter2">кв. метър</option>
+                        <option value="kilometer2">кв. километър</option>
+                        <option value="centimeter2">кв. сантиметър</option>
+                        <option value="decimeter2">кв. дециметър</option>
+                        <option value="milimeter2">кв. милиметър</option>
+                        <option value="hectare2">кв. хектар</option>
+                        <option value="dekar2">кв. декар</option>
+                    </select>
+                </div>
+                <span></span>
+                <div class="result">
+                    <input type="text" placeholder="Резултат" id="result2" readonly>
+                    <select id="resultType2">
+                        <option value="meter2">кв. метър</option>
+                        <option value="kilometer2">кв. километър</option>
+                        <option value="centimeter2">кв. сантиметър</option>
+                        <option value="decimeter2">кв. дециметър</option>
+                        <option value="milimeter2">кв. милиметър</option>
+                        <option value="hectare2">кв. хектар</option>
+                        <option value="dekar2">кв. декар</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <h2>Построяване графика на функция</h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="text" id="nanesi1" value="x^3 + 2x = 0">
+                </div>
+            </div>
+            <div class="result" style="display: none">
+                <input type="text" class="result1" placeholder="Корен X1" id="result1" readonly>
+                <input type="text" class="result1" placeholder="Корен X2" id="result2" readonly>
+            </div>
+            <button onclick="calculateNanesi1()" id="izchisli-koren">Построяване</button>
+            <button onclick="calculateNanesi1Nulirane()" id="izchisli-koren">Нулирай</button>
+        </div>
+
+        <!-- <div class="wrapper">
+            <h2>Намиране на </h2>
+            <div class="converter">
+                <div class="input">
+                    <input type="text" id="nanesi1" value="x^3 + 2x = 0">
+                </div>
+            </div>
+            <div class="result" style="display: none">
+                <input type="text" class="result1" placeholder="Корен X1" id="result1" readonly>
+                <input type="text" class="result1" placeholder="Корен X2" id="result2" readonly>
+            </div>
+
+            <button onclick="calculateNanesi1()" id="izchisli-koren">Нанеси стойностите</button>
+            <button onclick="calculateNanesi1Nulirane()" id="izchisli-koren">Нулирай</button>
+        </div> -->
+
+    </div>
+
+
+    <details style="margin-top: 40px;" class="animate__animated animate__bounceInLeft">
+        <summary>Видове операции с числа</summary>
+        <div>
+            <ol>
+                <li><strong>Събиране:</strong>
+                    <ul>
+                        <li>Събирането на обикновени числа става като съберете две или повече числа.</li>
+                        <li>Пример: <span class="primer1">3 + 5 = 8</span></li>
+                    </ul>
+                </li>
+                <li><strong>Изваждане:</strong>
+                    <ul>
+                        <li>Изваждането на обикновени числа става като извадите едно цяло число от друго.</li>
+                        <li>Пример: <span class="primer1">10 - 4 = 6</span></li>
+                    </ul>
+                </li>
+                <li><strong>Умножение:</strong>
+                    <ul>
+                        <li>Когато умножаваме две числа, ние ги събираме многократно.</li>
+                        <li>Пример: <span class="primer1">3 . 5 = 15</span> <span class="primer1">3 х 5 = 15</span></li>
+                    </ul>
+                </li>
+                <li><strong>Деление:</strong>
+                    <ul>
+                        <li>Делението е като разделяме нещо на групи.</li>
+                        <li>Пример: <span class="primer1">10:5 = 2</span> <span class="primer1">10/5 = 2</span> <span
+                                class="primer1">10÷5 = 2</span></li>
+                    </ul>
+                </li>
+        </div>
+    </details>
+
+    <details class="animate__animated animate__bounceInLeft">
+        <summary>Проценти</summary>
+        <br>
+        <a href="https://www.youtube.com/watch?v=KOSFyyhnvas&t=101s" id="video-uroci-btn" target="_blank">Видео урок на
+            тема "Проценти" от МОН (с БНТ на училище, линк към YouTube)</a>
+        <p>Процентите са начин за изразяване на част от цялото, представен като стотинки. Те измерват отношението между
+            една стойност и цялото количество, като се изразяват във форма на процент от 100. Процентите се използват
+            широко за описание на увеличения, намаления, съотношения и други аспекти от числовата информация в по-лесен
+            и удобен за разбиране начин.</p>
+        <div class="ol-img">
+            <ol>
+                <li><strong>Формиране на проценти:</strong>
+                    <ul>
+                        <li><strong>Пример:</strong> ако имаме 20 ябълки и искаме да изразим колко процента от тях са
+                            червени, ако 5 от тях са червени, тогава</li>
+                        <li><strong>Формула:</strong> <span class="primer1">Процент червени ябълки = Брой червени ябълки
+                                ÷ Общ брой ябълки . 100</span> ==> Процент червени ябълки =
+                            <sup>5</sup>/<sub>20</sub>.100 = 25%
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Процентно нарастване/намаляване:</strong>
+                    <ul>
+                        <li>Когато число нараства спрямо друго, увеличението се изразява така:
+                            <span class="primer1">Нарастване = ново число - старо число</span>
+                            Обаче, когато число намалява спрямо друго, намаление се изразява така:
+                            <span class="primer1">Намаление = старо число - ново число</span>
+                            Процентът на нарастване или намаляване на число винаги се изразява спрямо основата на
+                            старото число.
+                            Или:
+                            <span class="primer1">%Нарастване = 100 ⋅ (ново число - старо число) ÷ старо число</span>
+                            <span class="primer1">%Намаляване = 100 ⋅ (старо число - ново число) ÷ старо число</span>
+                        </li>
+                        <br>
+                        <li><strong>Пример 1:</strong> Имали сте 80 пощенски марки и сте продължили да събирате докато
+                            общия брой на пощенските марки е достигнал 120. С колко процента са се увеличили марките ви?
+                            <br> <span class="primer1"><sup>120 - 80</sup> / <sub>80</sub> . 100 = 50%</span>
+                        </li>
+                        <br>
+                        <li><strong>Пример 2:</strong> Имате 120 пощенски марки, с ваш приятел се съгласявате да
+                            размените неговата Лего игра за част от вашите марки. Той взема някои от марките, които му
+                            харесват. Вие преброявате, че са ви останали 100. С колко са намамели? <br> <span
+                                class="primer1"><sup>120 - 100</sup> / <sub>120</sub> . 100 = 16.67%</span></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </details>
+
+    <details class="animate__animated animate__bounceInLeft">
+        <summary>Декартова координатна система</summary>
+        <br>
+        <a href="https://www.youtube.com/watch?v=_y7Y0cwQgow&t=1039s" id="video-uroci-btn" target="_blank">Видео урок на
+            тема "Правоъгълна координатна система" от МОН (с БНТ на училище, линк към YouTube)</a>
+        <p>Декартовата координатна система е математически модел, предложен от френския математик Рене Декарт през 17-ти
+            век. Тя предоставя графичен начин за описване на точки в равнината чрез две перпендикулярни координатни оси
+            – X и Y. Ето някои от важните характеристики и концепции свързани с Декартовата координатна система:</p>
+        <div class="ol-img">
+            <ol>
+                <li><strong>Координатни оси:</strong>
+                    <ul>
+                        <li><strong>X-ос:</strong> Хоризонталната ос, представляваща абсцисата или хоризонталната
+                            координата (наляво или надясно).</li>
+                        <li><strong>Y-ос:</strong> Вертикалната ос, представляваща ординатата или вертикалната
+                            координата (нагоре или надолу).</li>
+                    </ul>
+                </li>
+                <li><strong>Нулева точка (начало на координатната система):</strong>
+                    <ul>
+                        <li>Точката (0,0) е началото на координатната система и се нарича нулева точка.</li>
+                    </ul>
+                </li>
+                <li><strong>Координати на точка:</strong>
+                    <ul>
+                        <li>Точките в равнината се описват с двойка числа (x, y), където x е абсцисата, а y е
+                            ординатата.</li>
+                    </ul>
+                </li>
+                <li><strong>Квадранти:</strong>
+                    <ul>
+                        <li>Равнината е разделена на четири квадранта от координатните оси.</li>
+                        <li>Точките в квадрант I (горен десен) имат положителни x и y координати.</li>
+                    </ul>
+                </li>
+                <li><strong>Графики на функции:</strong>
+                    <ul>
+                        <li>Математични функции се представят чрез графици в Декартовата координатна система. Всяка
+                            функция има уникален график.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <img src="/Images/Math/коориднатна-система.png" alt="" width="287.5px" height="auto"
+                style="border-radius: 5px;">
+        </div>
+    </details>
+
+    <details class="animate__animated animate__bounceInLeft">
+        <summary>Видове дроби</summary>
+
+        <details class="details-1">
+            <summary>Обикновени дроби</summary>
+            <p>Те биват <span class="primer1">правилни</span> и <span class="primer1">неправилни</span>. Правилна е една
+                дроб, когато числителят е по-малък от знаменателя, а неправилна - когато числителят е по-голям от
+                знаменателя.</p>
+            <div class="ol-img">
+                <ol>
+                    <li><strong>Дефиниция:</strong>
+                        <ul>
+                            <li>Пример: <span class="primer1">a/b</span></li>
+                            <li>Обикновените дроби са числител и знаменател, разделени с черта, където <span
+                                    class="primer1">a</span> е числител, а <span class="primer1">b</span>
+                                е знаменател.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Числител (a):</strong>
+                        <ul>
+                            <li>Числото, което е горната част на дробта.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Знаменател (b):</strong>
+                        <ul>
+                            <li>Числото, което е долната част на дробта и не може да бъде равно на нула.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Съкращаване:</strong>
+                        <ul>
+                            <li>Дробите могат да се съкращават, като се раздели числителят и знаменателят на дробта с
+                                общ делител. </li>
+                        </ul>
+                    </li>
+                    <li><strong>Операции с Дроби:</strong>
+                        <ul>
+                            <li>Дробите могат да бъдат събирани, изваждани, умножавани и делени.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <img src="/Images/Math/действия-обикн-дроби.png" alt="" id="img2">
+            </div>
+        </details>
+
+        <details class="details-1">
+            <summary>Смесени дроби</summary>
+            <div class="ol-img">
+                <ol>
+                    <li><strong>Дефиниция:</strong>
+                        <ul>
+                            <li>Пример: <span class="primer1">3<sup>1</sup>/<sub>2</sub></span></li>
+                            <li>Смесена дроб се състои от цяло число, числител и знаменател. Например, <span
+                                    class="primer1">3<sup>1</sup>/<sub>2</sub></span>, където <span
+                                    class="primer1">3</span> е цялата част, <span class="primer1">1</span> е числителят,
+                                а <span class="primer1">2</span> е знаменателят.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Числител и Знаменател:</strong>
+                        <ul>
+                            <li>Смесената дроба включва числител и знаменател, които се намират в обикновената дроб,
+                                част от израза</li>
+                        </ul>
+                    </li>
+                    <li><strong>Цялостна Част</strong>
+                        <ul>
+                            <li>Цялата част на смесената дроба е цялото число пред дробната част. Например, <span
+                                    class="primer1">4<sup>2</sup>/<sub>3</sub></span>, <span class="primer1">4</span> е
+                                цялата част.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Операции:</strong>
+                        <ul>
+                            <li>Смесените дроби могат да бъдат събирани, изваждани, умножавани и делени. За удобство, те
+                                могат да бъдат преобразувани в обикновени дроби преди извършването на операциите.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Преобразуване в Обикновена Дроб:</strong>
+                        <ul>
+                            <li>Смесената дроба може да бъде преобразувана в обикновена дроб, като се умножи цялата част
+                                по знаменателя и се добави числителят.</li>
+                            <li>Пример: <span class="primer1">3<sup>1</sup>/<sub>4</sub>==> 3х4=12 (знаменател), 12+1=13
+                                    (числител) ===> получава се 3<sup>13</sup>/<sub>4</sub></span></li>
+                            <li style="text-decoration: underline; text-underline-offset: 3px; font-weight: bold;">
+                                Знаменателят не се променя!</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </details>
+
+        <details class="details-1">
+            <summary>Десетични дроби</summary>
+            <div class="ol-img">
+                <ol>
+                    <li><strong>Дефиниция:</strong>
+                        <ul>
+                            <li>Пример: <span class="primer1">1.22</span> <span class="primer1">122,2245</span> <span
+                                    class="primer1">0.2</span> <span class="primer1">a.bcd</span> <span
+                                    class="primer1">a,bcd</span></li>
+                            <li>Десетичните дроби са числа, които се представят чрез десетична дроб, т.е., дроб, където
+                                знаменателят е степен на 10. Формално, те се записват като <span
+                                    class="primer1">a.bcd</span>, където <span class="primer1">a</span> е цялата част, а
+                                <span class="primer1">bcd</span> е десетичната част.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Преобразуване в обикновена дроб:</strong>
+                        <ul>
+                            <li>Десетичната дроб <span class="primer1">a.bcd</span> може да се преобразува в обикновена
+                                дроб чрез следната формула: <span class="primer1">a.bcd = a + bcd/100</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Събиране и изваждане:</strong>
+                        <ul>
+                            <li>Десетичните дроби се събират и изваждат като съответно се слагат или изваждат
+                                десетичните части.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Умножение и деление:</strong>
+                        <ul>
+                            <li>При умножение и деление, десетичните дроби се третират като обикновени дроби. При
+                                умножение, се умножават цялите части и десетичните части отделно. При деление, се
+                                умножава числителят на първата дроб по знаменателят на втората и обратно.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Приложение:</strong>
+                        <ul>
+                            <li>Те се използват широко във всекидневни изчисления, финанси,
+                                инженерия, наука и други области, предоставяйки точно представяне на части от единица и
+                                позволявайки точни изчисления и мерки.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </details>
+    </details>
+
+    <details class="animate__animated animate__bounceInLeft">
+        <summary>Видове уравнения</summary>
+        <div>
+            <ol>
+                <li><strong>Линейни уравнения:</strong>
+                    <ul>
+                        <li>Пример: <span class="primer1">ax+b=0</span></li>
+                        <li>Линейните уравнения представляват прави линии и имат степен на уравнението 1.</li>
+                    </ul>
+                </li>
+                <li><strong>Квадратни уравнения:</strong>
+                    <ul>
+                        <li>Пример: <span class="primer1">a<sup>2</sup>+ bx + c = 0</span></li>
+                        <li>Квадратните уравнения имат степен на уравнението 2 и могат да бъдат решени с формула на
+                            квадратните корени.</li>
+                    </ul>
+                </li>
+                <li><strong>Системи от уравнения:</strong>
+                    <ul>
+                        <li>Пример: <span class="primer1">ax + by = c</span> <span class="primer1">dx + ey = f</span>
+                        </li>
+                        <li>Системите от уравнения включват няколко уравнения и се решават обикновено за повече от една
+                            променлива.</li>
+                    </ul>
+                </li>
+                <li><strong>Рационални уравнения:</strong>
+                    <ul>
+                        <li>Пример: <span class="primer1">a/x + b/y = c</span></li>
+                        <li>Рационалните уравнения включват дроби и се решават чрез умножение и опростяване.</li>
+                    </ul>
+                </li>
+                <li><strong>Експоненциални уравнения:</strong>
+                    <ul>
+                        <li>Пример: <span class="primer1">log<sub>b</sub>(x)=c</span></li>
+                        <li>Експоненциалните уравнения включват променливи в експоненциален вид.</li>
+                    </ul>
+                </li>
+                <li><strong>Логаритмични уравнения:</strong>
+                    <ul>
+                        <li>Пример: <span class="primer1">ax<sup>3</sup> + bx<sup>2</sup> + cx + d = 0</span></li>
+                        <li>Логаритмичните уравнения включват логаритми на променливи.</li>
+                    </ul>
+                </li>
+                <li><strong>Кубични уравнения:</strong>
+                    <ul>
+                        <li>Пример: <span class="primer1">∣ax+b∣=c</span></li>
+                        <li>Кубичните уравнения имат степен на уравнението 3.</li>
+                    </ul>
+                </li>
+            </ol>
+
+        </div>
+    </details>
+
+    <details class="animate__animated animate__bounceInLeft">
+        <summary>Числото π (Пи)</summary>
+        <p><b>В геометрията числото π (Пи) е приблизително равно на 3,14 или 22/7 (22 върху 7).</b><br>То се използва в
+            различни формули и изрази, като например за изчисляване на обиколка и площ на кръг. Също така, то е важно в
+            тригонометрията и анализа. Числото π е безкрайно число и има много интересни свойства, които го правят
+            полезно и уникално в математиката.</p>
+    </details>
+
+    <details class="animate__animated animate__bounceInLeft" id="maluktext">
+        <summary>Формули за съкратено умножение</summary>
+        <br>
+        <a href="https://www.youtube.com/watch?v=NUPGmuoQ9NU" id="video-uroci-btn" target="_blank">Видео урок на тема
+            "Формули за съкратено умножение" от МОН (с БНТ на училище, линк към YouTube)</a>
+        <p>
+            <bold>(1):</bold> (a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup>
+            <br><br>
+            <bold>(2):</bold> (a - b)<sup>2</sup> = a<sup>2</sup> - 2ab + b<sup>2</sup>
+            <br><br>
+            <bold>(3):</bold> (a + b)<sup>3</sup> = a<sup>3</sup> + 3a<sup>2</sup>b + 3ab<sup>2</sup> + b<sup>3</sup>
+            <br><br>
+            <bold>(4):</bold> (a - b)<sup>3</sup> = a<sup>3</sup> - 3a<sup>2</sup>b + 3ab<sup>2</sup> - b<sup>3</sup>
+            <br><br>
+            <bold>(5):</bold> (a + b)(a - b) = a<sup>2</sup> - b<sup>2</sup>
+            <br><br>
+            <bold>(6):</bold> (a + b)(a<sup>2</sup> – ab + b<sup>2</sup>) = a<sup>3</sup> + b<sup>3</sup>
+            <br><br>
+            <bold>(7):</bold> (a – b)(a<sup>2</sup> + ab + b<sup>2</sup>) = a<sup>3</sup> – b<sup>3</sup>
+        </p>
+    </details>
+    <details class="animate__animated animate__bounceInLeft">
+        <summary>Геометрични фигури</summary>
+
+        <!-- КРЪГ -->
+        <details class="details-1">
+            <summary>Кръг</summary>
+            <h4>Неща, които трябва да знаем за кръга:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Окръжността се определя от центъра и радиуса или диаметъра.</li>
+                <li>Окръжността е равна на 360°.</li>
+                <li>В окръжността има различни видове ъгли.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <img src="/Images/Math/кръг-снимки/кръг.png" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><em>r</em></th>
+                            <th><em>d</em></th>
+                            <th>O</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="r">радиус</td>
+                            <td data-heading="d">диаметър</td>
+                            <td data-heading="O">център</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <p><em>S = π.r<sup>2</sup></em></p>
+                        <h4>Формули за диаметър и радиус:</h4>
+                        <p><em>d = 2r<br>r = d/2</em></p>
+                        <!-- <img src="/Images/Math/триъгълник-снимки/formulalicetriugulnik.png" alt=""> -->
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за обиколка:</h4>
+                        <p><em>P = 2.π.r = π.d</em></p>
+                        <h4>Числото π</h4>
+                        <p>π = 3.14</p>
+                        <!-- <img src="/Images/Math/триъгълник-снимки/perimeturformulatriugulnik.png" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- ТРИЪГЪЛНИК -->
+        <details class="details-1">
+            <summary>Триъгълник</summary>
+            <h4>Неща, които трябва да знаем за триъгълника:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Сборът от ъглите в триъгълник е 180°.</li>
+                <li>Височината е перпендикулярът, спуснат от всеки връх към срещуположната страна на триъгълника.</li>
+                <li>Центърът на описаната окръжност се намира в пресечната точка на симетралите на страните.</li>
+                <li>Симетралата е перпендикулярна на страната и минава през нейната среда.</li>
+                <li>Центърът на вътрешно вписаната окръжност се намира в пресечната точка на ъглополовящите на ъглите.
+                </li>
+                <li>Ъглополовящата дели ъгъла на две еднакви половини.</li>
+                <li>Медианата е отсечка, която свързва върха със средата на срещуположната му страна.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <!-- <img src="/Images/Math/триъгълник-снимки/triugulnik1.png" alt=""> -->
+                <img src="/Images/Math/триъгълник-снимки/triugulnik2.png" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>a,b,c</th>
+                            <th>h<sub>a</sub></th>
+                            <th>h<sub>в</sub></th>
+                            <th>h<sub>c</sub></th>
+                            <th><em>α, β, γ</em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="a,b,c">страни на триъгълника</td>
+                            <td data-heading="ha">Височина на страната <bold>a</bold>
+                            </td>
+                            <td data-heading="hв">Височина на страната <bold>в</bold>
+                            </td>
+                            <td data-heading="hc">Височина на страната <bold>с</bold>
+                            </td>
+                            <td data-heading="α, β, γ">ъгъл</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <img src="/Images/Math/триъгълник-снимки/formulalicetriugulnik.png" alt="">
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за периметър:</h4>
+                        <!-- <p class="formula1"><em>P = a + b + c</em></p> -->
+                        <img src="/Images/Math/триъгълник-снимки/perimeturformulatriugulnik.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- ПРАВОЪГЪЛЕН ТРИЪГЪЛНИК -->
+        <details class="details-1">
+            <summary>Правоъгълен триъгълник</summary>
+            <h4>Неща, които трябва да знаем за правоъгълния триъгълник:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Правоъгълният триъгълник се състои от два перпендикулярни катета и хипотенуза – най-дългата страна.
+                </li>
+                <li>Дължината на страните може да бъде определена с помощта на Питагоровата теорема, а големината на
+                    ъглите с помощта на тригонометричните функции.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <img src="/Images/Math/правоъгълен триъгълник-снимки/прав. триъгълник.png" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>a,b</th>
+                            <th>c</th>
+                            <th>h<sub>c</sub></th>
+                            <th><em>α, β</em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="a,b">катети, сключващи прав ъгъл</td>
+                            <td data-heading="с">хипотенуза</td>
+                            <td data-heading="hc">височина на страната <bold>c</bold>
+                            </td>
+                            <td data-heading="α, β">ъгъл</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <img src="/Images/Math/правоъгълен триъгълник-снимки/licenapravtriugulnik.png" alt="">
+                        <h4>Ъгъл:</h4>
+                        <img src="/Images/Math/правоъгълен триъгълник-снимки/uglite.png" alt="">
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за периметър:</h4>
+                        <!-- <p class="formula1"><em>P = a + b + c</em></p> -->
+                        <img src="/Images/Math/правоъгълен триъгълник-снимки/perimeturformulatriugulnik.png" alt="">
+                        <h4>Питагорова теорема:</h4>
+                        <!-- <p class="formula1"><em>C<sub>2</sub> = a<sub>2</sub> + b<sub>2</sub></em></p> -->
+                        <img src="/Images/Math/правоъгълен триъгълник-снимки/pigatorova teorema.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- КВАДРАТ -->
+        <details class="details-1">
+            <summary>Квадрат</summary>
+            <h4>Неща, които трябва да знаем за квадрата:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Страните на квадрата са равни и съседните страни сключват прав ъгъл.</li>
+                <li>Диагоналите са равни по дължина, разполовяват се и са взаимно перпендикулярни.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <!-- <img src="триъгълник-снимки/triugulnik1.png" alt=""> -->
+                <img src="/Images/Math/квадрат-снимки/квадрат фигура.png" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><em>a</em></th>
+                            <th><em>d</em></th>
+                            <th><em>О</em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="a">страна</td>
+                            <td data-heading="d">диагонал</td>
+                            <td data-heading="О">център</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <img src="/Images/Math/квадрат-снимки/лице квадрат.png" alt="">
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за периметър:</h4>
+                        <!-- <p class="formula1"><em>P = a + b + c</em></p> -->
+                        <img src="/Images/Math/квадрат-снимки/периметър-квадрат.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- ПРАВОЪГЪЛНИК -->
+        <details class="details-1">
+            <summary>Правоъгълник</summary>
+            <h4>Неща, които трябва да знаем за правоъгълника:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Правоъгълникът е четириъгълник, на който всичките му ъгли са прави.</li>
+                <li>Срещуположните страни са успоредни и равни по дължина.</li>
+                <li>Диагоналите са с еднаква дължина, взаимно се разполовяват, но не са взаимно перпендикулярни.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <!-- <img src="/Images/Math/триъгълник-снимки/triugulnik1.png" alt=""> -->
+                <img src="/Images/Math/правоъгълник-снимки/правоъгълник-фигура.jpg" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><em>a,в</em></th>
+                            <th><em>d</em></th>
+                            <th><em>О</em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="a,в">страна</td>
+                            <td data-heading="d">диагонал</td>
+                            <td data-heading="О">център</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <img src="/Images/Math/правоъгълник-снимки/лице правоъгълник.png" alt="">
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за периметър:</h4>
+                        <!-- <p class="formula1"><em>P = a + b + c</em></p> -->
+                        <img src="/Images/Math/правоъгълник-снимки/периметър.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- РОМБ-->
+        <details class="details-1">
+            <summary>Ромб</summary>
+            <h4>Неща, които трябва да знаем за ромба:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Ромбът е четириъгълник, чиито всички страни са еднакво дълги, но не сключват прав ъгъл.</li>
+                <li>Диагоналите не са равни по дължина, но са взаимно перпендикулярни и се разполовяват от пресечната си
+                    точка.</li>
+                <li>Височината е перпендикулярното разстояние между две срещуположни страни.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <!-- <img src="/Images/Math/триъгълник-снимки/triugulnik1.png" alt=""> -->
+                <img src="/Images/Math/ромб-снимки/ромб-фигура.jpg" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><em>a</em></th>
+                            <th><em>d</em></th>
+                            <th><em>h</em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="a">страна</td>
+                            <td data-heading="d">диагонали</td>
+                            <td data-heading="h">височина</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <img src="/Images/Math/ромб-снимки/лице-формула.png" alt="">
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за периметър:</h4>
+                        <!-- <p class="formula1"><em>P = a + b + c</em></p> -->
+                        <img src="/Images/Math/ромб-снимки/периметър-ромб.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- УСПОРЕДНИК-->
+        <details class="details-1">
+            <summary>Успоредник</summary>
+            <h4>Неща, които трябва да знаем за успоредника:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Успоредникът е четириъгълник, чиито срещуположни страни са успоредни и равни по дължина, но
+                    съседните страни не сключват прав ъгъл.</li>
+                <li>Диагоналите не са равни по дължина и не са взаимно перпендикулярни, но се разполовяват от пресечната
+                    си точка.</li>
+                <li>Височините са перпендикулярните разстоянията между срещуположните страни.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <!-- <img src="триъгълник-снимки/triugulnik1.png" alt=""> -->
+                <img src="/Images/Math/успоредник-снимки/успоредник-фигура.jpg" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><em>a,b</em></th>
+                            <th><em>d</em></th>
+                            <th><em>h<sub>a</sub></em></th>
+                            <th><em>h<sub>b</sub></em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="a,b">страна</td>
+                            <td data-heading="d">диагонали</td>
+                            <td data-heading="ha">височина на страната <em>a</em></td>
+                            <td data-heading="hb">височина на страната <em>b</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <!-- <img src="/Images/Math/успоредник-снимки/лице-формула.png" alt=""> -->
+                        <p class="formula1" style="text-align: center; margin: auto;">S = h.h<sub>a</sub> =
+                            h.h<sub>b</sub></p>
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за периметър:</h4>
+                        <!-- <p class="formula1"><em>P = a + b + c</em></p> -->
+                        <img src="/Images/Math/успоредник-снимки/периметър-формула.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- ТРАПЕЦ-->
+        <details class="details-1">
+            <summary>Трапец</summary>
+            <h4>Неща, които трябва да знаем за трапеца:</h4>
+            <ul style="margin-left: 25px;">
+                <li>Трапецът е четириъгълник, в който две срещуположни страни са успоредни.</li>
+                <li>Успоредните страни се наричат основи, а неуспоредните – бедра.</li>
+                <li>Диагоналите не се разполовяват от пресечната си точка и не са взаимно перпендикулярни.</li>
+                <li>Височината е перпендикулярното разстояние между основите.</li>
+            </ul>
+            <hr>
+            <div class="img-left">
+                <!-- <img src="/Images/Math/триъгълник-снимки/triugulnik1.png" alt=""> -->
+                <img src="/Images/Math/трапец-снимки/трапец-фигура.png" alt="">
+            </div>
+            <div class="img-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><em>a,b,c,d</em></th>
+                            <th><em>d</em></th>
+                            <th><em>h</em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-heading="a,b,c,d">страни</td>
+                            <td data-heading="d">диагонали</td>
+                            <td data-heading="h">височина</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formuli">
+                    <div class="left-1">
+                        <h4>Формула за лице:</h4>
+                        <img src="/Images/Math/трапец-снимки/лице-формула.png" alt="">
+                    </div>
+                    <div class="right-1">
+                        <h4>Формула за периметър:</h4>
+                        <!-- <p class="formula1"><em>P = a + b + c</em></p> -->
+                        <img src="/Images/Math/трапец-снимки/периметър-формула.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </details>
+
+    </details>
+
+
+    <!-- todo     Chatbot Toggler -->
+    <!-- todo     Chatbot Toggler -->
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-rounded">close</span>
+    </button>
+    <div class="chatbot-popup">
+        <!-- Chatbot Header -->
+        <div class="chat-header">
+            <div class="header-info">
+                <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 1024 1024">
+                    <path
+                        d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z" />
+                </svg>
+                <h2 class="logo-text">Чати - Виртуален асистент</h2>
+            </div>
+            <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+        </div>
+        <!-- Chatbot Body -->
+        <div class="chat-body">
+            <div class="message bot-message">
+                <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 1024 1024">
+                    <path
+                        d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z" />
+                </svg>
+                <!-- prettier-ignore -->
+                <div class="message-text"> Здравей! <br/> Как мога да ти помогна?<br><span id="clear-chat">(Можеш да
+                        изтриеш хронологията на чата с командата <b>"/Изтрий чат"</b>)</span></div>
+            </div>
+        </div>
+        <!-- Chatbot Footer -->
+        <div class="chat-footer">
+            <form action="#" class="chat-form">
+                <textarea placeholder="Съобщение..." class="message-input" required></textarea>
+                <div class="chat-controls">
+                    <button type="button" id="emoji-picker"
+                        class="material-symbols-outlined">sentiment_satisfied</button>
+                    <div class="file-upload-wrapper">
+                        <input type="file" accept="image/*" id="file-input" hidden />
+                        <img src="#" />
+                        <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                        <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                    </div>
+                    <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+            <p id="check-info">Чати може да прави грешки. Проверете важната информация!</p>
+        </div>
+    </div>
+
+    <!-- Linking Emoji Mart script for emoji picker -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+    <script src="/JavaScript/chatbot.js"></script>
+
+</body>
+
+
+<footer class="footer-distributed"></footer>
+
+
+</html>

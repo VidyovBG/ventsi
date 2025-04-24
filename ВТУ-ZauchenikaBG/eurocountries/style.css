@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  padding-bottom: 40px;
+}
+
+
+details {
+  width: 90%;
+}
+
+
+.nav1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  min-width: 300px;
+  margin: auto;
+}
+
+.nav1 a {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 2.75rem;
+  background-color: darkred;
+  border: 2px solid darkred;
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+.nav1 a:hover {
+  background-color: greenyellow;
+  color: black;
+  border-color: greenyellow;
+}
+
+#active {
+  color: black !important;
+}
+
+
+nav a {
+  font-weight: bold;
+}
+
+.div {
+  font-weight: bold;
+  position: relative;
+}
+
+.follow-us i {
+  margin: 2.5px 10px;
+  font-size: 34px;
+  text-decoration: none;
+  color: black;
+}
+
+details {
+  width: 90%;
+  border: black 1px outset;
+  border-radius: 10px;
+  background-color: rgb(124, 124, 124);
+  color: whitesmoke;
+  margin: 10px auto;
+  text-align: left;
+  padding: 10px;
+}
+
+details summary:hover {
+  cursor: pointer;
+}
+
+details p {
+  font-size: 22px;
+}
+
+details summary,
+#details1 {
+  font-size: 24px;
+}
+
+.details1 a {
+  text-decoration: underline;
+  color: darkblue;
+}
+
+.details1 {
+  border: black 1px outset;
+  border-radius: 10px;
+  background-color: grey;
+  color: whitesmoke;
+  text-align: left;
+  margin: 10px;
+  padding: 10px;
+  width: 95%;
+  cursor: pointer;
+}
+
+.btn-continents {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.btn-continents a {
+  background-color: rgb(124, 124, 124);
+  padding: 7.5px 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.company-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.company-info div {
+  text-align: center;
+  color: #e9e9e9;
+  margin: 15px 15px;
+}
+
+#link-btn {
+  height: 20px;
+  width: auto;
+  position: absolute;
+  top: 7.5px;
+  right: 8.5px;
+  cursor: pointer;
+  filter: invert(100%);
+}
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  margin-left: 0;
+  background: url("/Images/DarkBG.png") no-repeat center/cover fixed;
+  text-align: center;
+}
+
+@media (min-width: 1351px) {
+
+
+  .right-div {
+    width: calc(100% - 160px);
+    float: right;
+    /* border: 1px solid red; */
+  }
+
+  .warning {
+    border-style: solid;
+    width: 300px;
+    height: auto;
+    margin: auto;
+    border-color: white;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .div {
+    background-color: grey;
+    margin: auto;
+    width: 87.5%;
+    padding: 10px;
+    border-style: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+
+  .div1 {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .div1 h1 {
+    text-align: center;
+  }
+
+  #mega-heading {
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+  }
+
+  #medium-heading {
+    font-size: 24px;
+    color: rgb(236, 236, 236);
+  }
+
+  #cont-specs:not(#mega-heading):not(#medium-heading),
+  .div1 ul li {
+    font-size: 18px;
+    text-align: left;
+    color: black;
+  }
+
+  #title2 {
+    font-size: 50px;
+    margin: 0;
+    font-weight: lighter;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 95%;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    margin: auto;
+    font-size: 22px;
+    padding: 10px;
+    /*border-radius: 10px;*/
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    color: white;
+  }
+
+  #title {
+    color: greenyellow;
+    font-size: 50px;
+    margin: 0;
+  }
+
+  
+
+  nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 160px;
+    background-color: transparent;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+    /*border: solid;*/
+    overflow-y: auto;
+  }
+
+  nav::-webkit-scrollbar {
+    background-color: rgba(165, 165, 165, 0.2);
+    width: 9px;
+    direction: ltr;
+  }
+
+  nav::-webkit-scrollbar-thumb {
+    color: red;
+    background-color: rgb(165, 165, 165);
+    border-radius: 10px;
+  }
+
+  .menu {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-style: solid;
+    border-radius: 50px;
+    border-color: grey;
+    background-color: grey;
+    margin: 10px;
+    width: 90px;
+  }
+
+  /* .menu2 {
+    background-color: green;
+  } */
+  .menu2 a {
+    width: 10%;
+    display: inline-block;
+  }
+
+
+  #active {
+    background-color: greenyellow;
+    color: black;
+    border-color: greenyellow;
+  }
+
+  .menu:hover:not(#active) {
+    background-color: rgb(97, 97, 97);
+  }
+
+  #text_menu {
+    color: white;
+    width: 90%;
+    margin: auto;
+  }
+}
+
+
+@media (max-width: 1350px) {
+
+  #active {
+    background-color: greenyellow;
+    color: black;
+    border-color: greenyellow;
+  }
+
+  .menu:hover:not(#active) {
+    background-color: rgb(97, 97, 97);
+  }
+
+
+  .div {
+    background-color: grey;
+    margin: auto;
+    width: min-content;
+    min-width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: outset 1px grey;
+    margin-top: 25px;
+    padding-bottom: 10px;
+  }
+
+  .div1 {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .div1 h1 {
+    text-align: center;
+  }
+
+  #mega-heading {
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+  }
+
+  #medium-heading {
+    font-size: 24px;
+    color: rgb(236, 236, 236);
+  }
+
+  #cont-specs:not(#mega-heading):not(#medium-heading),
+  .div1 ul li {
+    font-size: 18px;
+    text-align: left;
+    color: black;
+  }
+
+  #title2 {
+    font-size: 50px;
+    margin: 0;
+    font-weight: lighter;
+  }
+
+  table {
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+    width: fit-content;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    margin: auto;
+    font-size: 18px;
+    padding: 5px;
+    /*border-radius: 10px;*/
+  }
+
+  nav {
+    margin: auto;
+    padding: 0px;
+    width: 95%;
+  }
+
+  .menu:not(.center-nav a) {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: grey;
+    padding: 3.5px;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    text-decoration: none;
+    color: #f1c40f;
+    background-color: grey;
+    color: white;
+    font-size: 24px;
+    display: inline-block;
+    margin-top: 3px;
+  }
+
+  .center-nav a {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: grey;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #f1c40f;
+    background-color: grey;
+    color: white;
+    font-size: 24px;
+    display: inline-block;
+    margin-top: 3px;
+  }
+
+  #text_menu {
+    color: white;
+    font-size: 25px;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    color: white;
+  }
+
+  #title {
+    color: greenyellow;
+    font-style: normal;
+    font-size: 50px;
+  }
+
+}
+
+@media (max-width: 750px) {
+  #active {
+    background-color: greenyellow;
+    color: black;
+    border-color: greenyellow;
+  }
+
+  .menu:hover:not(#active) {
+    background-color: rgb(97, 97, 97);
+  }
+
+  .table-container table thead {
+    display: none;
+  }
+
+  .table-container table td {
+    display: block;
+
+  }
+
+  .table-container table td::before {
+    content: attr(data-heading) ": ";
+    font-weight: bold;
+  }
+
+  .div {
+    background-color: grey;
+    margin: auto;
+    width: min-content;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 25px;
+    border: 1px outset grey;
+  }
+
+  .warning {
+    border-style: solid;
+    width: 300px;
+    height: auto;
+    margin: auto;
+    border-color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid black;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px;
+    /*border-radius: 10px;*/
+  }
+
+  nav {
+    margin: auto;
+    padding: 0px;
+    width: 95%;
+  }
+
+  .menu {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: grey;
+    padding: 10px;
+    text-decoration: none;
+    color: #f1c40f;
+    background-color: grey;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 3px;
+    color: white;
+  }
+
+  #text_menu {
+    color: white;
+    font-size: 25px;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    color: white;
+  }
+
+  #title {
+    color: greenyellow;
+    font-size: 50px;
+  }
+
+  
+}
+
+@media (max-width: 426px) {
+  body {
+    margin: 0;
+    margin-left: 0;
+    background: url("/Images/DarkBG.png") no-repeat center/cover fixed;
+    text-align: center;
+  }
+
+  #active {
+    background-color: greenyellow;
+    color: black;
+    border-color: greenyellow;
+  }
+
+  .menu:hover:not(#active) {
+    background-color: rgb(97, 97, 97);
+  }
+
+  .table-container table thead {
+    display: none;
+  }
+
+  .table-container table td {
+    display: block;
+
+  }
+
+  .table-container table td::before {
+    content: attr(data-heading) ": ";
+    font-weight: bold;
+  }
+
+  .div {
+    background-color: grey;
+    margin: auto;
+    width: min-content;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 25px;
+    border: 1px outset grey;
+  }
+
+  .warning {
+    border-style: solid;
+    width: 300px;
+    height: auto;
+    margin: auto;
+    border-color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid black;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px;
+    /*border-radius: 10px;*/
+  }
+
+  nav {
+    margin: auto;
+    padding: 0px;
+    width: 95%;
+  }
+
+  .menu {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: grey;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: grey;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 3px;
+  }
+
+  #text_menu {
+    color: white;
+    font-size: 25px;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    color: white;
+  }
+
+  #title {
+    color: greenyellow;
+    font-size: 50px;
+  }
+
+  
+}

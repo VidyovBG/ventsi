@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    /* height: 100%; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background: url("https://img.freepik.com/free-photo/white-painted-wall-texture-background_53876-138197.jpg?w=1380&t=st=1678647113~exp=1678647713~hmac=ebc20cf88db536d633bc612209e7c8d0ee24cb4f1eb481aeafbf95ec156cf4bc") no-repeat center/cover fixed;
+}
+
+.invert-body {
+    font-family: 'Open Sans', sans-serif;
+    background: url("/Images/DarkBG.png") no-repeat center/cover fixed;
+    /* background-color: #121212; */
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.invert-body .wrapper,
+.invert-body details {
+    border: #4b4b4b 1px outset;
+}
+
+#video-uroci-btn {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    color: darkorange;
+    font-weight: bold;
+}
+
+/*!              LARGE-IMG                 */
+
+.large-img {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    box-shadow: 0px 2px 0px 0px rgb(0, 0, 0);
+}
+
+.large-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+
+.overlay {
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 10px;
+    box-sizing: border-box;
+}
+
+.overlay h1 {
+    margin: 0;
+    font-size: 3rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+
+
+
+/*!              OTHER                 */
+
+
+/* Скриване на стрелките за увеличаване/намаляване при въвеждане на числа */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+.big-wrapper-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.wrapper {
+    margin: 17.5px;
+    padding: 20px;
+    max-width: 400px;
+    background-color: rgb(41, 41, 41);
+    border-radius: 10px;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+    min-height: 265px;
+}
+
+#izchisli-koren {
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: #4b4b4b;
+    color: white;
+    border: none;
+    border-radius: 7.5px;
+    margin: 5px 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    scale: 1;
+    transition: scale 1s ease;
+}
+
+#izchisli-koren:hover {
+    scale: 1.05;
+    transition: scale 1s ease;
+}
+
+.converter {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.converter span {
+    width: 30px;
+    height: 30px;
+    background: url(./convert_arrow.svg) no-repeat center;
+    margin: 0 10px;
+}
+
+.result1 {
+    width: 111.25px;
+    height: 35px;
+}
+
+.result input {
+    background-color: rgba(75, 75, 75, 0.35);
+}
+
+
+.show-result-btn {
+    color: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+
+
+input,
+select {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: #4b4b4b;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 16px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+select {
+    cursor: pointer;
+}
+
+details {
+    margin: auto;
+    margin-top: 10px;
+    background-color: rgb(41, 41, 41);
+    color: whitesmoke;
+    border: 1px rgb(41, 41, 41) solid;
+    border-radius: 10px;
+    width: 95%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+details ul li {
+    list-style: disc;
+    margin-left: 30px;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+details summary {
+    font-size: 24px;
+}
+
+.details-1 {
+    border: black 1px outset;
+    border-radius: 10px;
+    background-color: rgb(61, 61, 61);
+}
+
+.details-1 img {
+    border-radius: 10px;
+    width: 275px;
+    height: 275px;
+}
+
+.img-left {
+    display: flexbox;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    margin: auto;
+    font-size: 18px;
+    margin-top: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    /* border: 1px solid black; */
+}
+
+th,
+td {
+    border: 1px solid black;
+    background-color: #4b4b4b;
+    margin: auto;
+    font-size: 20px;
+    padding: 10px;
+    /*border-radius: 10px;*/
+}
+
+.formuli img {
+    width: 180px;
+    height: 100px;
+}
+
+.formula1 {
+    background-color: white;
+    color: black;
+    border: white 1px solid;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.formuli {
+    text-align: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.right-1 img,
+.left-1 img {
+    height: 60px;
+    width: auto;
+}
+
+ol li:not(ul li) {
+    margin: 15px 20px;
+    line-height: 1.7;
+}
+
+.ol-img {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.primer1 {
+    background-color: #4b4b4b;
+    padding: 2.5px 5.5px;
+    border-radius: 5px;
+    width: max-content;
+}
+
+.details-1 .primer1 {
+    background-color: rgb(41, 41, 41);
+}
+
+#img2 {
+    height: auto;
+    width: 260px;
+}
+
+
+
+
+
+@media only screen and (max-width: 321px) {
+
+    .wrapper {
+        font-size: 18px;
+    }
+
+    .formuli img {
+        width: 50px;
+        height: 40px;
+        text-align: center;
+    }
+
+    .details-1 img {
+        border-radius: 10px;
+        width: 190px;
+        height: 160px;
+    }
+
+    .right-1 img,
+    .left-1 img {
+        height: 40px;
+        width: auto;
+    }
+
+    #maluktext {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    table thead {
+        display: none;
+    }
+
+    table td {
+        display: block;
+    }
+
+    table td::before {
+        content: attr(data-heading) ": ";
+        font-weight: bold;
+    }
+
+    table {
+        margin: auto;
+        font-size: 20px;
+        margin-top: 10px;
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        border-bottom: 1px solid black;
+        margin: auto;
+        font-size: 20px;
+        padding: 5px;
+        /*border-radius: 10px;*/
+    }
+
+    .formuli {
+        text-align: center;
+        justify-content: space-evenly;
+        display: block;
+    }
+
+    .right-1 img,
+    .left-1 img {
+        height: 60px;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 427px) and (min-width: 321px) {
+    #maluktext {
+        font-size: 16px;
+    }
+
+    .formuli {
+        width: 90%;
+    }
+}

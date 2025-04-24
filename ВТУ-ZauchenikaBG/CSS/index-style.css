@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+
+:root {
+    /* Font Variables */
+    --font-primary: 'Rubik', sans-serif;
+    --font-secondary: 'Manrope', sans-serif;
+
+    /* Color Variables */
+    --bg-light: #f0f0f0;
+    --bg-dark: #222222;
+    --bg-dark-cards: #1e1e1e;
+    --text-light: #f3f3f3;
+    --text-dark: #000000;
+    --primary-hover: #47ae6a;
+
+    /* Border & Shadow Variables */
+    --border-light: rgba(255, 255, 255, 0.225);
+    --border-dark: rgba(0, 0, 0, 0.325);
+    --box-shadow-light: 1px 1px 10px 1px rgba(0, 0, 0, 0.325);
+    --box-shadow-dark: 0 0 5px 0 rgba(0, 0, 0, 0.325);
+
+    /* Overlay Settings */
+    --overlay-brightness: 45%;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.invert-body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply dark card background and light text in dark mode */
+.invert-body .statistics .small-div,
+.invert-body .history-updates,
+.invert-body .history-updates .flex-updates .info-updates a {
+    background-color: var(--bg-dark-cards);
+    /* Corrected variable */
+    border: outset 1px var(--border-light);
+    color: var(--text-light);
+}
+
+.invert-body .history-updates .flex-updates .info-updates a:hover,
+.invert-body .history-updates .flex-updates .info-updates a:focus {
+    color: var(--primary-hover);
+}
+
+/* Large Image Header Section */
+.large-img {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    box-shadow: 0 2px 0 var(--text-dark);
+}
+
+.large-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(var(--overlay-brightness));
+}
+
+/* Overlay Content on Images */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--text-light);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 2.5rem 0.625rem;
+    /* 40px and 10px converted to rem */
+    box-sizing: border-box;
+}
+
+.overlay h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.overlay h3 {
+    margin: 0 auto;
+    width: 85%;
+    min-width: 285px;
+    font-size: 1.1rem;
+}
+
+/* Statistics Section */
+.statistics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 22.5px 7.5px;
+}
+
+.small-div {
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow-light);
+    margin: 25px auto;
+    padding: 10px 7.5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 270px;
+    text-align: center;
+}
+
+.small-div i {
+    margin: 7.5px;
+}
+
+.small-div #info-kum {
+    position: absolute;
+    bottom: 2.5px;
+    right: 2.5px;
+    font-size: 0.75rem;
+}
+
+/* Secondary Hero Section */
+#priznanie {
+    font-size: 2rem;
+    border-radius: 5px;
+}
+
+.s-hero-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.s-hero-items .items-name {
+    width: 225px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 12.5px;
+    padding: 10px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    position: relative;
+    flex-wrap: nowrap !important;
+}
+
+.s-hero-items #logo {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 1px solid var(--text-dark);
+    margin-bottom: -5px;
+}
+
+.link-btn {
+    position: absolute;
+    top: 7.5px;
+    right: 8.5px;
+    height: 15px;
+    cursor: pointer;
+}
+
+/* History Updates Section */
+.history-updates {
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow-light);
+    margin: 35.7px auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.history-updates #child1 {
+    margin: 20px;
+}
+
+.info-updates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.info-updates a {
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow-dark);
+    padding: 5px 7.5px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 1.875rem;
+    margin: 10px;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-updates a:hover,
+.info-updates a:focus {
+    color: var(--primary-hover);
+    box-shadow: var(--box-shadow-dark);
+}
+
+/* Last Update Information */
+.last-update-info {
+    text-align: left;
+    padding: 2.5px 5px;
+    max-width: 600px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .large-img {
+        height: 500px;
+    }
+
+    .overlay h1 {
+        font-size: 2rem;
+    }
+
+    .overlay h3 {
+        font-size: 1rem;
+    }
+
+    .s-hero-items .items-name {
+        width: 180px;
+        height: 150px;
+        font-size: 1rem;
+    }
+}

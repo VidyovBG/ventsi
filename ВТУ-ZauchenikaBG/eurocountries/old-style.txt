@@ -1,0 +1,497 @@
+@media (min-width: 1351px) {
+    body {
+        margin: 0;
+        margin-left: 0;
+        background: url("images/BG1.jpg") no-repeat center/cover fixed;
+        text-align: center;
+    }
+ 
+    .warning {
+      border-style: solid;
+      width: 300px;
+      height: auto;
+      margin: auto;
+      border-color: white;
+      background-color: black;
+      border-radius: 10px;
+    }
+ 
+    .div {
+        background-color: grey;
+        margin: auto;
+        width: 70%;
+        padding: 10px;
+        border-style: outset;
+        border-radius: 30px;
+        margin-top: 25px;
+    }
+    table{
+        border: 1px solid black;
+        margin: auto;
+        font-size: 20px;
+        margin-top: 10px;
+        width: 95%;
+    }
+    th, td {
+        border: 1px solid black;
+        margin: auto;
+        font-size: 22px;
+        padding: 10px;
+        /*border-radius: 10px;*/
+    }
+    h1, h2, h3, p {
+        color: white;
+    }
+    #title {
+        animation: color-change 30s infinite;
+        font-style: oblique;
+        font-size: 50px;
+    }
+    @keyframes color-change {
+        0% {
+          color: blue;
+        }
+        10% {
+          color: red;
+        }
+        20% {
+          color: #1abc9c;
+        }
+        30% {
+          color: #d35400;
+        }
+        40% {
+          color: blue;
+        }
+        50% {
+          color: orange;
+        }
+        60% {
+          color: rgb(60, 255, 0);
+        }
+        70% {
+          color: #2980b9;
+        }
+        80% {
+          color: #f1c40f;
+        }
+        90% {
+          color: #2980b9;
+        }
+        100% {
+          color: pink;
+        }
+    }
+    nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 9%;
+        background-color: transparent;
+        position: fixed;
+        height: 100%;
+        overflow: auto;;
+        text-align: center;
+        /*border: solid;*/
+    }
+    .menu {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+        color: rgb(212, 212, 212);
+        border-style: solid;
+        border-radius: 50px;
+        background-color: #111;
+        margin: 10px;
+        width: 50%;
+    }
+    /* .menu2 {
+      background-color: green;
+    } */
+    .menu2 a {
+      width: 10%;
+      display: inline-block;
+    }
+    
+
+    #active {
+        color: chartreuse;
+        background-color: grey;
+    }
+    .menu:hover:not(#active) #menu2:hover:not(#active) {
+        color: chartreuse;
+    }
+    #text_menu {
+        color: white;
+    }
+  }
+ 
+ 
+ 
+@media (max-width: 1350px) {
+    body {
+      margin: 0;
+      margin-left: 0;
+      background: url("images/BG1.jpg") no-repeat center/cover fixed;
+      text-align: center;
+    }
+    #active {
+      color: chartreuse;
+      background-color: grey;
+  }
+
+ 
+    .div {
+        background-color: grey;
+        margin: auto;
+        width: min-content;
+        min-width: 70%;
+        padding: 10px;
+        border-style: outset;
+        border-radius: 30px;
+        margin-top: 25px;
+        padding-bottom: 10px;
+    }
+ 
+    .warning {
+      border-style: solid;
+      width: 300px;
+      height: auto;
+      margin: auto;
+      border-color: white;
+      background-color: black;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+ 
+    table{
+      margin: auto;
+      font-size: 20px;
+      margin-top: 10px;
+      width: fit-content;
+    }
+    th, td {
+      border: 1px solid black;
+      margin: auto;
+      font-size: 20px;
+      padding: 5px;
+      /*border-radius: 10px;*/
+    }
+
+    nav {
+      margin: auto;
+      padding: 0px;
+      width: 95%;
+    }
+    .menu {
+      border-style: solid;
+      border-radius: 10px;
+      border-color: black;
+      padding: 10px;
+      text-decoration: none;
+      color: #f1c40f;
+      background-color: black;
+      font-size: 20px;
+      display: inline-block;
+      margin-top: 3px;
+    }
+    #text_menu {
+    color: white;
+    font-size: 25px;
+    }
+    h1, h2, h3, p {
+      color: white;
+  }
+  #title {
+      animation: color-change 30s infinite;
+      font-style: oblique;
+      font-size: 50px;
+  }
+  @keyframes color-change {
+      0% {
+        color: blue;
+      }
+      10% {
+        color: red;
+      }
+      20% {
+        color: #1abc9c;
+      }
+      30% {
+        color: #d35400;
+      }
+      40% {
+        color: blue;
+      }
+      50% {
+        color: orange;
+      }
+      60% {
+        color: rgb(60, 255, 0);
+      }
+      70% {
+        color: #2980b9;
+      }
+      80% {
+        color: #f1c40f;
+      }
+      90% {
+        color: #2980b9;
+      }
+      100% {
+        color: pink;
+      }
+  }
+}
+@media (max-width: 750px) {
+  body {
+    margin: 0;
+    margin-left: 0;
+    background: url("images/BG1.jpg") no-repeat center/cover fixed;
+    text-align: center;
+  }
+  #active {
+    color: chartreuse;
+    background-color: grey;
+}
+  .table-container table thead {
+    display: none;
+  }
+
+  .table-container table td {
+    display: block;
+
+  }
+
+  .table-container table td::before {
+    content: attr(data-heading) ": ";
+    font-weight: bold;
+  }
+
+  .div {
+      background-color: grey;
+      margin: auto;
+      width: min-content;
+      padding: 10px;
+      border-style: outset;
+      border-radius: 30px;
+      margin-top: 25px;
+  }
+
+  .warning {
+    border-style: solid;
+    width: 300px;
+    height: auto;
+    margin: auto;
+    border-color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+
+  table{
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+    border: 1px solid black;
+  }
+  th, td {
+    border-bottom: 1px solid black;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px;
+    /*border-radius: 10px;*/
+  }
+
+  nav {
+    margin: auto;
+    padding: 0px;
+    width: 95%;
+  }
+  .menu {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    padding: 10px;
+    text-decoration: none;
+    color: #f1c40f;
+    background-color: black;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 3px;
+  }
+  #text_menu {
+  color: white;
+  font-size: 25px;
+  }
+  h1, h2, h3, p {
+    color: white;
+}
+#title {
+    animation: color-change 30s infinite;
+    font-style: oblique;
+    font-size: 50px;
+}
+@keyframes color-change {
+    0% {
+      color: blue;
+    }
+    10% {
+      color: red;
+    }
+    20% {
+      color: #1abc9c;
+    }
+    30% {
+      color: #d35400;
+    }
+    40% {
+      color: blue;
+    }
+    50% {
+      color: orange;
+    }
+    60% {
+      color: rgb(60, 255, 0);
+    }
+    70% {
+      color: #2980b9;
+    }
+    80% {
+      color: #f1c40f;
+    }
+    90% {
+      color: #2980b9;
+    }
+    100% {
+      color: pink;
+    }
+}
+}
+ 
+@media (max-width: 426px) {
+  body {
+    margin: 0;
+    margin-left: 0;
+    background: url("images/BG1.jpg") no-repeat center/cover fixed;
+    text-align: center;
+  }
+  #active {
+    color: chartreuse;
+    background-color: grey;
+}
+  .table-container table thead {
+    display: none;
+  }
+ 
+  .table-container table td {
+    display: block;
+ 
+  }
+ 
+  .table-container table td::before {
+    content: attr(data-heading) ": ";
+    font-weight: bold;
+  }
+ 
+  .div {
+      background-color: grey;
+      margin: auto;
+      width: min-content;
+      padding: 10px;
+      border-style: outset;
+      border-radius: 30px;
+      margin-top: 25px;
+  }
+ 
+  .warning {
+    border-style: solid;
+    width: 300px;
+    height: auto;
+    margin: auto;
+    border-color: white;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+ 
+  table{
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+    border: 1px solid black;
+  }
+  th, td {
+    border-bottom: 1px solid black;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px;
+    /*border-radius: 10px;*/
+  }
+ 
+  nav {
+    margin: auto;
+    padding: 0px;
+    width: 95%;
+  }
+  .menu {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(22, 22, 22);
+    padding: 10px;
+    text-decoration: none;
+    color: #f1c40f;
+    background-color: rgb(22, 22, 22);
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 3px;
+  }
+  #text_menu {
+  color: white;
+  font-size: 25px;
+  }
+  h1, h2, h3, p {
+    color: white;
+}
+#title {
+    animation: color-change 30s infinite;
+    font-style: oblique;
+    font-size: 50px;
+}
+@keyframes color-change {
+    0% {
+      color: blue;
+    }
+    10% {
+      color: red;
+    }
+    20% {
+      color: #1abc9c;
+    }
+    30% {
+      color: #d35400;
+    }
+    40% {
+      color: blue;
+    }
+    50% {
+      color: orange;
+    }
+    60% {
+      color: rgb(60, 255, 0);
+    }
+    70% {
+      color: #2980b9;
+    }
+    80% {
+      color: #f1c40f;
+    }
+    90% {
+      color: #2980b9;
+    }
+    100% {
+      color: pink;
+    }
+}
+}

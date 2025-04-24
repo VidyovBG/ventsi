@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+body:not(.overlay h1),
+.invert-body:not(.overlay h1) {
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    margin: 0;
+    /* height: 100%; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background: url("https://img.freepik.com/free-photo/white-painted-wall-texture-background_53876-138197.jpg?w=1380&t=st=1678647113~exp=1678647713~hmac=ebc20cf88db536d633bc612209e7c8d0ee24cb4f1eb481aeafbf95ec156cf4bc") no-repeat center/cover fixed;
+}
+
+.invert-body {
+    background: url("/Images/DarkBG.png") no-repeat center/cover fixed;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.invert-body .wrapper {
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.1);
+}
+
+.invert-body .large-img {
+    box-shadow: 0px 0px 2px 0px black;
+}
+
+
+
+
+
+
+/*!              LARGE-IMG                 */
+/* 
+.large-img {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    box-shadow: 0px 2px 0px 0px rgb(0, 0, 0);
+}
+
+.large-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+
+.overlay {
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 10px;
+    box-sizing: border-box;
+}
+
+.overlay h1 {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    font-size: 3rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+ */
+
+
+
+
+
+
+/*!              OTHER                 */
+
+/* Скриване на стрелките за увеличаване/намаляване при въвеждане на числа */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+#PS-btn {
+    background-color: #4b4b4b;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 7.25px 10px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+
+.big-wrapper-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.wrapper {
+    margin: 17.5px;
+    padding: 20px;
+    max-width: 400px;
+    background-color: rgb(41, 41, 41);
+    border-radius: 10px;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+    min-height: 265px;
+}
+
+#izchisli-koren {
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: #4b4b4b;
+    color: white;
+    border: none;
+    border-radius: 7.5px;
+    margin: 5px 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    scale: 1;
+    transition: scale 1s ease;
+}
+
+#izchisli-koren:hover {
+    scale: 1.05;
+    transition: scale 1s ease;
+}
+
+.converter {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.converter span {
+    width: 30px;
+    height: 30px;
+    background: url(./convert_arrow.svg) no-repeat center;
+    margin: 0 10px;
+}
+
+.result1 {
+    width: 111.25px;
+    height: 35px;
+}
+
+input,
+select {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: #4b4b4b;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 16px;
+}
+
+#chemical-equation {
+    width: 300px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.result input {
+    border: input 0;
+    background-color: rgba(79, 79, 79, 0.5);
+}
+
+select {
+    cursor: pointer;
+}
+
+#him-harakter-text {
+    font-size: 13.5px;
+}
+
+/* .periodichna-sistema img {
+    width: 95%;
+    min-width: 300px;
+    margin: auto;
+    border-radius: 7.5px;
+    height: auto;
+    border: 0 inset black;
+} */
+
+
+.teoria-details {
+    margin-top: 20px;
+}
+
+details {
+    margin: auto;
+    margin-top: 10px;
+    background-color: rgb(41, 41, 41);
+    /* box-shadow: 0px 0px 5px 0px rgb(0, 0, 0); */
+    border: outset 1px rgba(255, 255, 255, 0.225);
+    color: whitesmoke;
+    border-radius: 10px;
+    width: 95%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+
+summary:hover {
+    cursor: pointer;
+}
+
+details summary {
+    font-size: 24px;
+}
+
+.flex-p-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.details-1 {
+    border: black 1px outset;
+    border-radius: 10px;
+    background-color: rgb(61, 61, 61);
+}
+
+#mend-tablica-img {
+    width: 40%;
+    border-radius: 10px;
+}
+#flex-p-mend-tablica {
+    width: 50%;
+}
+
+@media (max-width: 1250px) {
+    #mend-tablica-img {
+        width: 95%;
+        height: auto;
+        border-radius: 10px;
+    }
+    #flex-p-mend-tablica {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Контейнер за цялото съдържание */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    /* бял фон */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заглавие */
+.header {
+    color: #2c3e50;
+    /* тъмно сиво */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Група за формата */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100% !important;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #2c3e50;
+    /* тъмно сиво */
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: #7f8c8d;
+    /* сиво за placeholder */
+}
+
+.input-field:focus {
+    border-color: #3498db;
+    /* светлосин за фокус */
+    box-shadow: 0 0 5px #3498db;
+}
+
+/* Бутоните */
+.button-group {
+    margin-top: 20px;
+}
+
+.action-btn {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #2c3e50;
+    /* тъмно сиво */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #3498db;
+    /* светлосин при hover */
+    transform: scale(1.05);
+}
+
+.action-btn:active {
+    background-color: #2980b9;
+    /* малко по-тъмно синият при клик */
+    transform: scale(1);
+}
+
+/* Изходен текст */
+.output {
+    margin-top: 20px;
+    padding: 12px;
+    border: 1px solid #2c3e50;
+    /* тъмно сиво */
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    /* светлосив фон за изход */
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+}

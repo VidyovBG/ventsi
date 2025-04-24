@@ -1,0 +1,121 @@
+
+
+/* Основен контейнер */
+.privacy-policy-div {
+ width: 80%;
+ max-width: 1200px;
+ min-width: 280px;
+ margin: 40px auto;
+ background-color: #fff;
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ border-radius: 8px;
+}
+
+.invert-privacy-policy-div {
+ background-color: rgb(37, 37, 37);
+ border: outset 1px rgba(255, 255, 255, 0.225);
+ color: whitesmoke;
+}
+
+.invert-privacy-policy-div * {
+ color: whitesmoke  !important;
+}
+.invert-privacy-policy-div .contact-info {
+ color: whitesmoke  !important;
+ background-color: #495057 !important;
+}
+
+/* Стил за заглавието */
+.privacy-policy-div h1 {
+ text-align: center;
+ /* color: #004085; */
+ color: black;
+ font-size: 2.4em;
+ margin-bottom: 20px;
+}
+
+/* Основен текст */
+.privacy-policy-div p {
+ margin-bottom: 15px;
+ font-size: 1.1em;
+ color: #495057;
+}
+
+/* Заглавия на секциите */
+.privacy-policy-div h2 {
+ color: black;
+ margin-top: 30px;
+ margin-bottom: 10px;
+ font-size: 1.6em;
+ border-bottom: 2px solid #e2e3e5;
+ padding-bottom: 5px;
+}
+
+/* Списъци */
+.privacy-policy-div ul {
+ margin-left: 20px;
+ padding-left: 20px;
+ list-style-type: disc;
+}
+
+.privacy-policy-div li {
+ font-size: 1.1em;
+ margin-bottom: 10px;
+}
+
+/* Връзка с нас секция */
+.privacy-policy-div .contact-info {
+ background-color: #e9ecef;
+ padding: 15px;
+ border-left: 5px solid black;
+ border-radius: 5px;
+ margin-top: 20px;
+}
+
+/* Акцентиран текст */
+.privacy-policy-div strong {
+ color: black;
+}
+
+/* Стил за линковете и контакти */
+.privacy-policy-div a {
+ color: black;
+ text-decoration: none;
+ transition: color 0.3s ease;
+}
+
+.privacy-policy-div a:hover {
+ color: black;
+}
+
+/* Край на контейнера */
+.privacy-policy-div:last-child {
+ margin-bottom: 0;
+}
+
+@media (min-width: 769px) {
+ .privacy-policy-div {
+  padding: 30px;
+ }
+}
+/* Отзивчив дизайн (Responsive) */
+@media (max-width: 768px) {
+ .privacy-policy-div {
+  width: 80%;
+  padding: 10px;
+ }
+
+ .privacy-policy-div h1 {
+  font-size: 2em;
+ }
+
+ .privacy-policy-div h2 {
+  font-size: 1.4em;
+ }
+
+ .privacy-policy-div p,
+ .privacy-policy-div li {
+  font-size: 1em;
+ }
+}
